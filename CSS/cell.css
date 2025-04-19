@@ -1,12 +1,26 @@
 body {
   background: #f0f0f0;
+  cursor: url('../Meadia/cursor.cur'), auto;
+}
+
+.cellBackground {
+  width: 100vw;                 /* Full width */
+  height: 50vh;                /* Full height */
+  background-color: blue;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
-  direction: rtl;
+
+  padding: 0;                   /* Optional: reset padding */
+  margin: 0;                    /* Optional: reset margin */
+  box-sizing: border-box;
 }
+
+
 
 .hex-grid {
   display: flex;
@@ -23,15 +37,13 @@ body {
   margin-bottom: -1.6%;
   margin-top: -1.6%;
 
-
-
   
 }
 
 .hex {
   width: 80px;
   height: 69.28px; /* 80 * 0.866 */
-  background-color: rgb(125, 190, 119);
+  background-color: rgb(255, 255, 255);
   clip-path: polygon(
     50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%
   );
@@ -47,7 +59,47 @@ body {
   cursor: pointer;
 }
 
+/* Small devices (phones, 576px and up) */
+@media (max-width: 576px) {
+  .hex {
+    width: 50px;
+    height: 43.3px; /* 50 * 0.866 */
+    font-size: 16px;
+
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .hex {
+    width: 65px;
+    height: 56.29px; /* 65 * 0.866 */
+    font-size: 22px;
+
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 769px) and (max-width: 992px) {
+  .hex {
+    width: 75px;
+    height: 64.95px; /* 75 * 0.866 */
+    font-size: 26px;
+  }
+}
+
+/* Extra large screens — default you've already defined */
+@media (min-width: 993px) {
+  .hex {
+    width: 80px;
+    height: 69.28px;
+    font-size: 28px;
+  }
+}
+
+
 .hex:hover {
   background-color: #add8e6;
   transform: scale(1.05);
 }
+
