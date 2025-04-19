@@ -1,0 +1,44 @@
+body{
+    background-color: var(--main-color);
+}
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    height: 50vh; 
+    width: 100vw; 
+    align-items: center;
+    gap: 16px; 
+    margin-top: 50px;
+}
+
+.btn {
+    width: 300px; 
+    padding: 16px 0;
+    border: none;
+    border-radius: 50px; 
+    font-size: 18px;
+    font-family: 'Righteous', sans-serif;
+    color: white;
+    cursor: pointer;
+    text-transform: lowercase;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    
+}
+
+.play-btn {
+    background-color: #1a1a80;
+}
+
+.create-room-btn {
+    background-color: #b3a3d9; 
+}
+
+.join-room-btn {
+    background-color: #4a4aff; 
+}
+
+.btn:hover {
+    transform: scale(1.05); 
+    opacity: 0.9; 
+}
