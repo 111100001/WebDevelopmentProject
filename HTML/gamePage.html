@@ -7,6 +7,9 @@
     <title>حروف مع قيس</title>
     <link rel="stylesheet" href="../CSS/cell.css">
     <link rel="stylesheet" href="../CSS/buttons.css">
+    <link rel="stylesheet" href="../CSS/container.css">
+
+
 </head>
 
 <body>
@@ -17,10 +20,39 @@
 
     <section>
         <button id="randomBtn" class="button">Random letters</button>
-        <button class="button">Ai</button>
+        <button class="button" id="aiBtn">Ai</button>
+        <button class="button" id="winBtn">Win</button>
     </section>
 
+    <article>
+        <div class="inner-container">
+            <p>the quesiotn are:</p>
+        </div>
+    </article>
+
+    <article id="popup" class="popup">
+        <div class="inner-container">
+            <p class="centered-text">what type of question:</p>
+            <!-- New button goes here -->
+            <div class="threeColumns">
+                <div class="hex">select</div>
+                <div class="hex">select</div>
+                <div class="hex">select</div>
+                <div class="hex">select</div>
+                <div class="hex">select</div>
+                <div class="hex">select</div>
+              </div>
+              
+
+
+            <button id="closePopup" class="button">Close</button>
+        </div>
+    </article>
+
+
     <script src="../js/Cell.js"></script>
+
+
 </body>
 
 </html>
