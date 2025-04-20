@@ -49,3 +49,205 @@
   
   /* Extra large screens (993px and up) — you already have this by default */
   
+
+  /* Base styles */
+.checkbox-wrapper {
+  --checkbox-size: 24px;
+  --checkbox-color: #f5762d;
+  --border-default: #e0e0e0;
+  --border-hover: #b0b0b0;
+  --x-color-default: #b0b0b0;
+  --x-color-checked: #af0d1a;
+
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: auto;
+  cursor: pointer;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Hide default checkbox */
+.checkbox-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Custom checkbox style */
+.checkbox-tile {
+  position: relative;
+  width: var(--checkbox-size);
+  height: var(--checkbox-size);
+  background: #ffffff;
+  border: 2px solid var(--border-default);
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover state */
+.checkbox-wrapper:hover .checkbox-tile {
+  border-color: var(--border-hover);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Focus state - modify this section */
+.checkbox-input:focus-visible ~ .checkbox-tile {
+  outline: 2px solid var(--checkbox-color);
+  outline-offset: 2px;
+}
+
+/* Remove default focus styles */
+.checkbox-input:focus:not(:focus-visible) ~ .checkbox-tile {
+  outline: none;
+}
+
+/* Checked state */
+.checkbox-input:checked ~ .checkbox-tile {
+  background: var(--checkbox-color);
+  border-color: var(--checkbox-color);
+  transition: all 0.2s ease-out;
+}
+
+/* Checkmark base */
+.checkmark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+}
+
+/* X lines base */
+.checkmark::before,
+.checkmark::after {
+  content: "";
+  position: absolute;
+  background: var(--x-color-default);
+  border-radius: 2px;
+  width: 2px;
+  height: 16px;
+  left: 50%;
+  top: 0;
+  transform-origin: center;
+  transition: all 0.3s ease-out;
+}
+
+/* X formation */
+.checkmark::before {
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.checkmark::after {
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+/* Checkmark formation when checked */
+.checkbox-input:checked ~ .checkbox-tile .checkmark::before {
+  width: 2px;
+  height: 9px;
+  left: 2px;
+  top: 6px;
+  transform: rotate(-45deg);
+}
+
+.checkbox-input:checked ~ .checkbox-tile .checkmark::after {
+  width: 2px;
+  height: 16px;
+  left: 10px;
+  top: 0px;
+  transform: rotate(45deg);
+}
+
+/* Rotation animation when checked */
+.checkbox-input:checked ~ .checkbox-tile .checkmark {
+  animation: rotate-container 0.8s ease-out forwards;
+}
+
+/* Change X color to white when checked */
+.checkbox-input:checked ~ .checkbox-tile .checkmark::before,
+.checkbox-input:checked ~ .checkbox-tile .checkmark::after {
+  background: var(--x-color-checked);
+}
+
+/* Animation keyframes */
+@keyframes rotate-container {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  70% {
+    transform: translate(-50%, -50%) rotate(720deg);
+  }
+  85% {
+    transform: translate(-50%, -50%) rotate(720deg) scale(1.2);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(720deg) scale(1);
+  }
+}
+
+/* Disabled state */
+.checkbox-input:disabled ~ .checkbox-tile {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Animation keyframes */
+@keyframes rotate-container {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  70% {
+    transform: translate(-50%, -50%) rotate(720deg);
+  }
+  85% {
+    transform: translate(-50%, -50%) rotate(720deg) scale(1.2);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(720deg) scale(1);
+  }
+}
+
+@keyframes draw-lines {
+  0% {
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    height: 16px;
+    opacity: 1;
+  }
+}
+
+/* Active/Click animation */
+.checkbox-wrapper:active .checkbox-tile {
+  transform: scale(0.95);
+}
+
+/* Label text styles */
+.label-text {
+  color: var(--border-hover);
+  font-size: 16px;
+  transition: color 0.2s ease-out;
+  user-select: none;
+}
+
+/* Show unchecked text by default */
+.label-text::before {
+  content: attr(data-unchecked);
+}
+
+/* Show checked text when checkbox is checked */
+.checkbox-input:checked ~ .label-text::before {
+  content: attr(data-checked);
+}
+
+/* Label color change when checked */
+.checkbox-input:checked ~ .label-text {
+  color: var(--checkbox-color);
+}
