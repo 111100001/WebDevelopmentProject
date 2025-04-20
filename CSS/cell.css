@@ -1,15 +1,16 @@
 body {
   background: #f0f0f0;
-  cursor: url('../Meadia/cursor.cur'), auto;
+ 
 }
 
 .cellBackground {
   width: 100vw;                 /* Full width */
   height: 50vh;                /* Full height */
-  background-color: blue;
+  background-color: #4F4778;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  
 
   display: flex;
   justify-content: center;
