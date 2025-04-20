@@ -2,6 +2,9 @@
 <html lang="en">
 
 <head>
+  <script type="module" src="/JS/firebase-init.js"></script>
+  <script type="module" src="/JS/RegisterAndLogin.js"></script>
+
   <style>
     body {
       background-color: #4F4778;
@@ -115,12 +118,11 @@
     <label>Password:</label>
     <input type="password" id="password" placeholder="Enter Password">
 
-    <button type="submit" class="login-btn">Login</button>
+    <button  id="login-btn" class="login-btn" type="submit">Login</button>
 
     <div class="signup-link">
-        Don’t have an account? <a href="SignUpPage.html">Sign up</a>
+        Don't have an account? <a href="SignUpPage.html">Sign up</a>
       </div>
   </form>
 </body>
-
 </html>

@@ -2,6 +2,10 @@
 <html lang="en">
 
 <head>
+  <script type="module" src="/JS/firebase-init.js"></script>
+  <script type="module" src="/JS/RegisterAndLogin.js"></script>
+
+
   <style>
     body {
       background-color: #4F4778;
@@ -87,23 +91,25 @@
 </head>
 
 <body>
+
   <form>
     <h2>Sign Up</h2>
 
     <label>Email:</label>
-    <input type="text" id="email" placeholder="Enter Email">
+    <input type="text" id="email" placeholder="Enter Email" required>
 
-    <label>Username:</label>
-    <input type="text" id="username" placeholder="Enter Username">
+    <!-- <label>Username:</label> -->
+    <!-- <input type="text" id="username" placeholder="Enter Username"> -->
 
     <label>Password:</label>
-    <input type="password" id="password" placeholder="Enter Password">
+    <input type="password" id="password" placeholder="Enter Password" required>
 
     <label>Re-enter Password:</label>
-    <input type="password" id="repassword" placeholder="Re-enter Password">
+    <input type="password" id="repassword" placeholder="Re-enter Password" required>
 
-    <button type="submit">Sign Up</button>
+    <button id="signup-btn" type="submit">Sign Up</button>
   </form>
+  
 </body>
 
 </html>
