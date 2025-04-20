@@ -1,0 +1,62 @@
+/* Main layout structure */
+.game-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    
+    gap: 10px;
+    min-height: 100vh;
+
+  }
+  
+  .left-panel {
+    width: 300px; /* Fixed width for left panel */
+    padding: 20px;
+    background: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Timer display */
+  .game-timer {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 20px 0;
+    text-align: center;
+  }
+  
+  .game-timer::after {
+    content: " S";
+  }
+  
+  /* Timer buttons */
+  .timer-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  
+  /* Name list */
+  .name-list {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .name-list h3 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+  }
+  
+  .name-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .name-list li {
+    margin: 8px 0;
+    font-size: 1.1rem;
+  }
+  
+
+  
+  

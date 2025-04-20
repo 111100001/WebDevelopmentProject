@@ -8,11 +8,35 @@
     <link rel="stylesheet" href="../CSS/cell.css">
     <link rel="stylesheet" href="../CSS/buttons.css">
     <link rel="stylesheet" href="../CSS/container.css">
+    <link rel="stylesheet" href="../CSS/timer.css">
 </head>
 
 <body>
 
-    <section class="cellBackground">
+    <div class="game-container">
+    <div class="left-panel">
+        <div class="game-timer">3.00</div>
+        
+        <div class="timer-buttons">
+          <button class="button small-btn">reset timer</button>
+          <button class="button small-btn">New Timer</button>
+        </div>
+      
+        <div class="name-list">
+          <h3>who is the first to press</h3>
+          <ul>
+            <li>abdullah</li>
+            <li>albara</li>
+            <li>fadi</li>
+            <li>ali</li>
+          </ul>
+        </div>
+        <section>
+            <button id="randomBtn" class="button">Random letters</button>
+            <button class="button">Ai</button>
+        </section>
+      </div>
+      <section class="cellBackground">
         <div class="hex-grid" id="board"></div>
     </section>
 
@@ -21,6 +45,8 @@
         <button class="button" id="aiBtn">Ai</button>
         <button class="button" id="winBtn">Win</button>
     </section>
+   
+    </div>
 
     <article>
         <div class="inner-container">
