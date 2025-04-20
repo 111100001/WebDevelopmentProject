@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <script type="module" src="/JS/landingPage.js"></script>
+        <script type="module" src="/JS/RegisterAndLogin.js"></script>
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
         </style>
@@ -37,8 +39,9 @@
                 </nav>
                 
             <div class="actions">
-                <a href="#" class="bttn btn-login">Login</a>
-                <a href="#" class="bttn btn-register">Register</a>
+                <a id="loginbtn" href="./LogInPage.html" class="bttn btn-login">Login</a>
+                <a id="signupbtn" href="./SignUpPage.html" class="bttn btn-register">Register</a>
+                <a id="logoutbtn" href="#" class="bttn btn-register">log out</a>
                 <button class="menu-btn">
                     ☰
                 </button>
@@ -48,10 +51,11 @@
     </header>
 
     <div class="button-container">
-        <button class="btn play-btn">play</button>
-        <button class="btn create-room-btn">create room</button>
-        <button class="btn join-room-btn">join room</button>
+        <button id="play-btn" class="btn play-btn">play</button>
+        <button id="create-room-btn" class="btn create-room-btn">create room</button>
+        <button  id="join-room-btn" class="btn join-room-btn">join room</button>
     </div>
-
-
     </body>
+
+   
+</html>

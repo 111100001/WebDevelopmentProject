@@ -51,7 +51,8 @@ function register(event) {
 
     createUserWithEmailAndPassword(auth, email, password)
         .then(userCredential => {
-            console.log('Registered:', userCredential.user); 
+            console.log('Registered:', userCredential.user);
+            window.location.href = './LogInPage.html'
         })
         .catch(error => {
             console.error('Registration error:', error.message); 
@@ -60,10 +61,22 @@ function register(event) {
 //document.getElementById('signup-btn').addEventListener('click', register);
 
 //logout
-function logout(){
+function logout(event){
+    event.preventDefault();
     signOut(auth)
         .then(() => {
             console.log('logged out');
+            const loginButton = document.getElementById('loginbtn');
+            const signupButton = document.getElementById('signupbtn');
+
+            if (loginButton) {
+                loginButton.style.display = 'inline-block'; // Show the login button
+            }
+
+            if (signupButton) {
+                signupButton.style.display = 'inline-block'; // Show the signup button
+            }
+            
         })
         .catch(error => {
             console.error('logout error',error.message);
@@ -74,6 +87,7 @@ function logout(){
 document.addEventListener('DOMContentLoaded', () => {
     const loginButton = document.getElementById('login-btn');
     const signupButton = document.getElementById('signup-btn');
+    const logoutbutton = document.getElementById('logoutbtn')
 
     if (loginButton) {
         loginButton.addEventListener('click', login);
@@ -81,6 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (signupButton) {
         signupButton.addEventListener('click', register);
+    }
+    if(logoutbutton){
+        logoutbutton.addEventListener('click', logout);
+        
     }
 });
     
