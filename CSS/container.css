@@ -1,6 +1,6 @@
 .inner-container {
     width: 90%;
-    max-width: 600px;
+    max-width: 1000px;
     height: 250px;
     background-color: white;
     border-radius: 20px;
@@ -8,6 +8,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    justify-self: center;
     padding-top: 24px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   }
@@ -53,8 +54,8 @@
   /* Extra large (desktop and up) */
   @media (min-width: 993px) {
     .inner-container {
-      width: 600px;
-      height: 300px;
+      width: 900px;
+      height: 400px;
     }
   
     .centered-text {
