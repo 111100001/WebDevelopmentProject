@@ -16,7 +16,7 @@
   @media (max-width: 576px) {
     .inner-container {
       width: 60%;
-      height: 200px;
+      height: 250px;
       padding-top: 16px;
     }
   
@@ -61,4 +61,23 @@
       font-size: 24px;
     }
   }
+ 
   
+.twoColumns {
+    display: grid;
+    grid-template-columns: repeat(2, auto); /* 3 columns */
+    justify-content: center;
+    gap: 20px;
+    font-size: small;
+    margin-bottom: 5%;
+}  
+  
+.threeColumns {
+  display: grid;
+  grid-template-columns: repeat(3, auto); /* 3 columns */
+  justify-content: center;
+  gap: 10px;
+  font-size: small;
+  margin-bottom: 5%;
+}
+

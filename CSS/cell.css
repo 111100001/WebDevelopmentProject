@@ -153,16 +153,6 @@ body {
   to { opacity: 1; }
 }
 
-.threeColumns {
-  display: grid;
-  grid-template-columns: repeat(3, auto); /* 3 columns */
-  justify-content: center;
-  gap: 10px;
-  font-size: small;
-  margin-bottom: 5%;
-}
-
-
 .hexagonPopWindow{
   width: 80px;
   height: 69.28px; /* 80 * 0.866 */
