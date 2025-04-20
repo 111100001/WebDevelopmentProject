@@ -41,11 +41,12 @@
         <div class="hex-grid" id="board"></div>
     </section>
 
-    <article>
-      <div class="inner-container">
-          <p>the quesiotn are:</p>
-      </div>
-  </article>
+    <article id="questionsArticle">
+        <div id="questionContainer" class="inner-container">
+          <p>الأسئلة هي:</p>
+          <!-- Questions will be inserted here by JavaScript -->
+        </div>
+      </article>
    
     </div>
 
@@ -53,60 +54,120 @@
 
     <article id="popup" class="popup">
         <div class="inner-container">
+
+            <div id="errorMsg" class="error-msg"></div>
             <p>what type of question:</p>
             <div class="threeColumns">
-
+                <!-- Sports -->
                 <label class="checkbox-wrapper">
-                    <input type="checkbox" class="checkbox-input" />
+                    <input 
+                        type="checkbox" 
+                        class="checkbox-input" 
+                        data-category="sports"
+                        id="sportsCheckbox"
+                    >
                     <span class="checkbox-tile">
                         <span class="checkmark"></span>
                     </span>
-                    <span data-unchecked="🏀 رياضة؟" data-checked="🏀 رياضة ✅" class="label-text"></span>
+                    <span class="label-text">🏀 رياضة</span>
+                </label>
+            
+                <!-- Religion -->
+                <label class="checkbox-wrapper">
+                    <input 
+                        type="checkbox" 
+                        class="checkbox-input" 
+                        data-category="religion"
+                        id="religionCheckbox"
+                    >
+                    <span class="checkbox-tile">
+                        <span class="checkmark"></span>
+                    </span>
+                    <span class="label-text">🕌 دينية</span>
+                </label>
+            
+                <!-- Culture -->
+                <label class="checkbox-wrapper">
+                    <input 
+                        type="checkbox" 
+                        class="checkbox-input" 
+                        data-category="culture"
+                        id="cultureCheckbox"
+                    >
+                    <span class="checkbox-tile">
+                        <span class="checkmark"></span>
+                    </span>
+                    <span class="label-text">📚 ثقافة</span>
+                </label>
+            
+                <!-- History -->
+                <label class="checkbox-wrapper">
+                    <input 
+                        type="checkbox" 
+                        class="checkbox-input" 
+                        data-category="history"
+                        id="historyCheckbox"
+                    >
+                    <span class="checkbox-tile">
+                        <span class="checkmark"></span>
+                    </span>
+                    <span class="label-text">🏛️ تاريخ</span>
+                </label>
+            
+                <!-- Anime -->
+                <label class="checkbox-wrapper">
+                    <input 
+                        type="checkbox" 
+                        class="checkbox-input" 
+                        data-category="anime"
+                        id="animeCheckbox"
+                    >
+                    <span class="checkbox-tile">
+                        <span class="checkmark"></span>
+                    </span>
+                    <span class="label-text">🎌 انمي</span>
+                </label>
+            
+                <!-- Movies -->
+                <label class="checkbox-wrapper">
+                    <input 
+                        type="checkbox" 
+                        class="checkbox-input" 
+                        data-category="movies"
+                        id="moviesCheckbox"
+                    >
+                    <span class="checkbox-tile">
+                        <span class="checkmark"></span>
+                    </span>
+                    <span class="label-text">🎬 أفلام</span>
                 </label>
 
                 <label class="checkbox-wrapper">
-                    <input type="checkbox" class="checkbox-input" />
+                    <input 
+                        type="checkbox" 
+                        class="checkbox-input" 
+                        data-category="charcters"
+                        id="charcters"
+                    >
                     <span class="checkbox-tile">
                         <span class="checkmark"></span>
                     </span>
-                    <span data-unchecked="🕌 دينية؟" data-checked="🕌 دينية ✅" class="label-text"></span>
-                </label>
-
-                <label class="checkbox-wrapper">
-                    <input type="checkbox" class="checkbox-input" />
-                    <span class="checkbox-tile">
-                        <span class="checkmark"></span>
-                    </span>
-                    <span data-unchecked="📚 ثقافة؟" data-checked="📚 ثقافة ✅" class="label-text"></span>
-                </label>
-
-                <label class="checkbox-wrapper">
-                    <input type="checkbox" class="checkbox-input" />
-                    <span class="checkbox-tile">
-                        <span class="checkmark"></span>
-                    </span>
-                    <span data-unchecked="🏛️ تاريخ؟" data-checked="🏛️ تاريخ ✅" class="label-text"></span>
-                </label>
-
-                <label class="checkbox-wrapper">
-                    <input type="checkbox" class="checkbox-input" />
-                    <span class="checkbox-tile">
-                        <span class="checkmark"></span>
-                    </span>
-                    <span data-unchecked="🎌 انمي؟" data-checked="🎌 انمي ✅" class="label-text"></span>
-                </label>
-
-                <label class="checkbox-wrapper">
-                    <input type="checkbox" class="checkbox-input" />
-                    <span class="checkbox-tile">
-                        <span class="checkmark"></span>
-                    </span>
-                    <span data-unchecked="🎬 أفلام؟" data-checked="🎬 أفلام ✅" class="label-text"></span>
+                    <span class="label-text">🏀 شخصيات</span>
                 </label>
             </div>
+            
             <div class="input-wrapper">
-                <input class="input" name="text" placeholder="Type here..." type="text" />
-            </div>
+                <input
+                  class="input"
+                  id="letterInput"
+                  name="text"
+                  placeholder="Type a letter..."
+                  type="text"
+                  maxlength="2"
+                />
+                
+              </div>
+              
             <div class=".twoColumns">
                 <button id="closePopup" class="button" class="buttonPop">Close</button>
                 <button id="send" class="button" class="buttonPop">Send</button>

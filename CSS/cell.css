@@ -1,11 +1,12 @@
 body {
   background: #f0f0f0;
   cursor: url('../Meadia/cursor\ \(1\).cur'), auto;
- 
+  overflow: hidden;
+  height: 100%;
 }
 
 .cellBackground {
-  width: 100vw;                 /* Full width */
+  width: 50vw;                 /* Full width */
   height: 50vh;                /* Full height */
   background-color: #4F4778;
   background-size: cover;

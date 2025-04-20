@@ -483,3 +483,25 @@
 }
 
 /* Extra large devices (993px and up) — default styles apply */
+
+.error-msg {
+  color: red;
+  font-weight: bold;
+  margin-top: 5px;
+  display: none;
+  animation: none;
+  text-align: center;
+}
+
+.shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-6px); }
+  80% { transform: translateX(6px); }
+  100% { transform: translateX(0); }
+}
