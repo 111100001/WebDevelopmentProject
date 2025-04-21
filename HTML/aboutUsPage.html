@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Game Rules</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      background-color: #4f4778;
+      font-family: 'Fredoka', sans-serif;
+      color: white;
+      font-size: 20px;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #d8d6e5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 10px 20px;
+    }
+
+    .navbar-left img {
+      width: 25px;
+      height: auto;
+    }
+
+    .navbar-right {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .navbar-right button {
+      background-color: #4f4778;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      font-family: 'Fredoka', sans-serif;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .navbar-right button:hover {
+      background-color: #6a63a3;
+    }
+
+    /* Content */
+    .content {
+      max-width: 600px;
+      margin: 80px auto 100px;
+      padding: 0 20px;
+    }
+
+    .content h3 {
+      font-size: 30px;
+      text-transform: lowercase;
+      text-align: center;
+    }
+
+    .content ul {
+      padding-left: 20px;
+    }
+
+    .content li {
+      margin-bottom: 15px;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #d8d6e5;
+      color: #4f4778;
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 16px;
+    }
+
+    /* ========== Responsive Breakpoints ========== */
+
+    /* Small devices (phones, 576px and down) */
+    @media (max-width: 576px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar-right {
+        justify-content: flex-start;
+      }
+
+      .content {
+        margin: 60px 10px;
+        font-size: 16px;
+      }
+
+      .navbar-right button {
+        font-size: 12px;
+        padding: 5px 10px;
+      }
+
+      .content h3 {
+        font-size: 24px;
+      }
+    }
+
+    /* Medium devices (tablets, 768px and down) */
+    @media (max-width: 768px) {
+      .content {
+        font-size: 18px;
+      }
+
+      .navbar-right {
+        justify-content: center;
+      }
+    }
+
+    /* Large devices (992px and down) */
+    @media (max-width: 992px) {
+      .navbar {
+        padding: 10px;
+      }
+
+      .navbar-right button {
+        padding: 6px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="navbar-left">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Logo_placeholder.svg" alt="logo" />
+    </div>
+    <div class="navbar-right">
+      <button onclick="window.location.href='feedbackPage.html'">Feedback</button>
+      <button onclick="window.location.href='gameRulesPage.html'">Game Rules</button>
+      <button onclick="window.location.href='aboutUsPage.html'">About us</button>
+      <button onclick="window.location.href='LogInPage.html'">Log out</button>
+      
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+    <h3>About Us</h3>
+    
+    <p>Team Members:<br>
+        <ul>
+            <li>Albara Abumansour</li>
+            <li>Fadi Alzahrani</li>
+            <li>Abdullah Alhitairshi</li>
+            <li>Ali Alghamdi</li>
+        </ul> 
+    </p>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2025 Group 4. All rights reserved.</p>
+  </footer>
+  
+
+</body>
+</html>
