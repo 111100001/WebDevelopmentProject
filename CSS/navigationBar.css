@@ -1,0 +1,159 @@
+:root{
+    --main-color: #4F4778;
+}
+
+*{
+    font-family:'Righteous' ;
+    box-sizing: border-box; 
+
+}
+
+body{
+
+    margin: 0;
+}
+
+header{
+    background-color: white;
+    border-bottom: 1px solid #ccc;
+    width:100%;
+}
+
+.container{
+    width: 100%;
+    margin:0 auto;
+    padding:0 16px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    background-color: #4f477836;
+    
+}
+
+
+nav ul{
+    
+    display: flex;
+    list-style: none;
+    padding:0;
+    margin:0;
+    gap:24px;
+    
+    
+}
+
+nav a {
+    text-decoration: none;
+    color: gray;
+    font-size: 16px;
+    transition: opacity 0.3s ease;
+    border: 1px solid var(--main-color);
+    color: white;
+    background-color: var(--main-color);
+    border-radius: 4px;
+    display: inline-block;
+    text-decoration: none;
+    padding: 8px 16px;
+    display: flex;
+}
+
+nav a:hover{
+
+    opacity: 0.75;
+}
+
+.actions{
+    display: flex;
+    gap: 8px;
+}
+
+.bttn{
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-login{
+background-color: var(--main-color);
+color: white;
+}
+
+.btn-login:hover{
+    opacity: 0.75;
+
+}
+
+.btn-register{
+    background-color: #eee;
+    color: var(--main-color);
+}
+
+.btn-register:hover{
+    opacity: 0.75;
+}
+
+/* ✅ Extra Small Devices (≤576px) */
+@media (max-width: 576px) {
+    nav ul,
+    .actions a:not(.menu-btn) {
+      display: none;
+    }
+  
+    .menu-btn {
+      display: inline-block;
+    }
+  
+    .container {
+      flex-direction: row;
+      padding: 0 12px;
+    }
+  
+    .logo svg {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
+  /* ✅ Small Devices (577px–768px) */
+  @media (min-width: 577px) and (max-width: 768px) {
+    nav ul,
+    .actions a:not(.menu-btn) {
+      display: none;
+    }
+  
+    .menu-btn {
+      display: inline-block;
+    }
+  
+    .container {
+      flex-direction: row;
+      padding: 0 14px;
+    }
+  
+    .logo svg {
+      width: 42px;
+      height: 42px;
+    }
+  }
+  
+  /* ✅ Medium Devices (769px–992px) */
+  @media (min-width: 769px) and (max-width: 992px) {
+    nav ul {
+      gap: 16px;
+    }
+  
+    .container {
+      padding: 0 24px;
+    }
+  
+    .logo svg {
+      width: 46px;
+      height: 46px;
+    }
+  
+    .menu-btn {
+      display: none;
+    }}

@@ -1,0 +1,210 @@
+
+
+/* ========== SMALL: Phones (≤576px) ========== */
+@media (max-width: 576px) {
+    .button {
+      font-size: 0.5rem;
+      padding: 0.3em 10px;
+
+    }
+    .inner-container-pop{
+        width: 90%;
+        height: 50%;
+        background-color: brown;
+      }
+  
+    .checkbox-wrapper {
+      gap: 4px;
+      font-size: 14px;
+    }
+  
+    .input-wrapper input {
+      font-size: 0.9rem;
+      padding: 1rem 1rem 1rem 2.5rem;
+    }
+  
+    .hex {
+      width: 40px;
+      height: 33.3px;
+      font-size: 16px;
+    }
+  
+    .left-panel {
+      width: 50px;
+      height: 50px;
+      font-size: 16px;
+    }
+  
+    .inner-container {
+      width: 60%;
+      height: 60%;
+      padding-top: 16px;
+    }
+  
+    .popup {
+      padding: 2rem;
+    }
+  
+    .centered-text {
+      font-size: 18px;
+    }
+
+    .game-timer {
+        font-size: 1rem;
+        font-weight: bold;
+        margin: 20px 0;
+        text-align: center;
+      }
+  }
+  
+  /* ========== MEDIUM: Tablets (577px–768px) ========== */
+  @media (min-width: 577px) and (max-width: 768px) {
+    .button {
+      font-size: 0.9rem;
+      padding: 0.35em 0.8em;
+    }
+  
+    .checkbox-wrapper {
+      gap: 6px;
+      font-size: 15px;
+    }
+    .inner-container-pop{
+        width: 60%;
+        height: 50%;
+        background-color: rgb(146, 146, 13);
+      }
+  
+  
+    .input-wrapper input {
+      font-size: 1rem;
+      padding: 1.1rem 1rem 1.1rem 2.7rem;
+    }
+  
+    .hex {
+      width: 65px;
+      height: 56.29px;
+      font-size: 22px;
+    }
+  
+    .left-panel {
+      width: 65px;
+      height: 65px;
+      font-size: 22px;
+    }
+  
+    .inner-container {
+      width: 75%;
+      height: 75%;;
+      padding-top: 20px;
+    }
+  
+    .popup {
+      padding: 1.5rem;
+    }
+  
+    .centered-text {
+      font-size: 20px;
+    }
+
+    .game-timer {
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 20px 0;
+        text-align: center;
+      }
+  }
+  
+  /* ========== LARGE: Small laptops (769px–992px) ========== */
+  @media (min-width: 769px) and (max-width: 992px) {
+    .button {
+      font-size: 1rem;
+      padding: 0.375em 1em;
+    }
+  
+    .checkbox-wrapper {
+      gap: 8px;
+      font-size: 16px;
+    }
+  
+    .input-wrapper input {
+      font-size: 1.1rem;
+      padding: 1.2rem 1rem 1.2rem 3rem;
+    }
+  
+    .hex {
+      width: 75px;
+      height: 64.95px;
+      font-size: 26px;
+    }
+  
+    .left-panel {
+      width: 75px;
+      height: 75px;
+      font-size: 26px;
+    }
+  
+    .inner-container {
+      width: 80%;
+      height: 80%;;
+    }
+  
+    .popup {
+      padding: 2rem;
+    }
+  
+    .centered-text {
+      font-size: 22px;
+    }
+
+    .game-timer {
+        font-size: 3rem;
+        font-weight: bold;
+        margin: 20px 0;
+        text-align: center;
+      }
+  }
+  
+  /* ========== EXTRA LARGE: Desktops (≥993px) ========== */
+  @media (min-width: 993px) {
+    .hex {
+      width: 100px;
+      height: 90px;
+      font-size: 28px;
+      
+    }
+  
+    .left-panel {
+      width: 90px;
+      height: 90px;
+      font-size: 26px;
+    }
+  
+    .inner-container {
+      width: 100%;
+      height: 150%;
+    }
+  
+    .popup {
+      padding: 2.5rem;
+    }
+  
+    .centered-text {
+      font-size: 24px;
+    }
+
+    .game-timer {
+        font-size: 4rem;
+        font-weight: bold;
+        margin: 20px 0;
+        text-align: center;
+      }
+  }
+  
+  
+  @media (max-width: 800px) {
+    .game-container {
+      grid-template-columns: 1fr;
+      padding: 1rem;
+      gap: 20px;
+    }
+  }

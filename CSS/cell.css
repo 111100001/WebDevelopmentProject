@@ -1,14 +1,20 @@
+
 body {
-  background: #f0f0f0;
+  background: #4F4778;
   cursor: url('../Meadia/cursor\ \(1\).cur'), auto;
   overflow: hidden;
   height: 100%;
+  margin: 0;
+  padding: 0;
+
+  
 }
 
+
+
 .cellBackground {
-  width: 50vw;                 /* Full width */
-  height: 50vh;                /* Full height */
-  background-color: #4F4778;
+              /* Full height */
+  background-color: #616161;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -63,69 +69,10 @@ body {
   cursor: pointer;
 }
 
-/* Small devices (phones, 576px and up) */
-@media (max-width: 576px) {
-  .hex {
-    width: 50px;
-    height: 43.3px; /* 50 * 0.866 */
-    font-size: 16px;
-
-  }
-  .hexagonPopWindow {
-    width: 50px;
-    height: 43.3px; /* 50 * 0.866 */
-    font-size: 16px;
-
-  }
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 577px) and (max-width: 768px) {
-  .hex {
-    width: 65px;
-    height: 56.29px; /* 65 * 0.866 */
-    font-size: 22px;
-
-  }
-  .hexagonPopWindow {
-    width: 65px;
-    height: 56.29px; /* 65 * 0.866 */
-    font-size: 22px;
-
-  }
-}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 769px) and (max-width: 992px) {
-  .hex {
-    width: 75px;
-    height: 64.95px; /* 75 * 0.866 */
-    font-size: 26px;
-  }
-  .hexagonPopWindow {
-    width: 75px;
-    height: 64.95px; /* 75 * 0.866 */
-    font-size: 26px;
-  }
-}
-
-/* Extra large screens — default you've already defined */
-@media (min-width: 993px) {
-  .hex {
-    width: 80px;
-    height: 69.28px;
-    font-size: 28px;
-  }
-  .hexagonPopWindow {
-    width: 75px;
-    height: 64.95px; /* 75 * 0.866 */
-    font-size: 26px;
-  }
-}
 
 
 .hex:hover {
-  background-color: #add8e6;
+  background-color: #add8e6 ;
   transform: scale(1.05);
 }
 
@@ -179,4 +126,11 @@ body {
 .hexagonPopWindow:hover {
   background-color: #add8e6;
   transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .game-container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
 }

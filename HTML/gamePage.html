@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 
 <head>
     <meta charset="UTF-8">
@@ -9,133 +9,138 @@
     <link rel="stylesheet" href="../CSS/buttons.css">
     <link rel="stylesheet" href="../CSS/container.css">
     <link rel="stylesheet" href="../CSS/timer.css">
+    <link rel="stylesheet" href="/CSS/navigationBar.css">
+    <link rel="stylesheet" href="../CSS/mediaQuarry.css">
 </head>
 
-<body>
+<body id="body-container">
+    <header >
+        <nav class="container">
+            <a href="#" class="logo">
+                <svg fill="purple" height="50px" width="50px" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink"
+                    enable-background="new 0 0 512 512">
+                    <g>
+                        <g>
+                            <path fill="#1a1a80"
+                                d="m365.5,191.5v-106.7c0-7.2-3.8-13.8-9.9-17.5l-89-53.4c-6.5-3.9-14.5-3.9-21,0l-89.1,53.4c-6.2,3.7-9.9,10.3-9.9,17.5v106.7c0,7.2 3.8,13.8 9.9,17.5l89.1,53.4c9.4,5.4 17.2,2.5 21,0l89-53.4c6.1-3.7 9.9-10.3 9.9-17.5z" />
+                            <path fill="#b3a3d9"
+                                d="m220,303l-89-53.4c-6.5-3.9-14.5-3.9-21,0l-89.1,53.4c-6.2,3.7-9.9,10.3-9.9,17.5v106.7c0,7.2 3.8,13.8 9.9,17.5l89.1,53.4c9.4,5.4 17.2,2.5 21,0l89-53.4c6.2-3.7 9.9-10.3 9.9-17.5v-106.7c0-7.2-3.7-13.8-9.9-17.5z" />
+                            <path fill="#4a4aff"
+                                d="m491.1,302.9l-89-53.4c-6.5-3.9-14.5-3.9-21,0l-89.1,53.4c-6.2,3.7-9.9,10.3-9.9,17.5v106.7c0,7.2 3.8,13.8 9.9,17.5l89,53.4c9.4,5.4 17.2,2.5 21,0l89-53.4c6.2-3.7 9.9-10.3 9.9-17.5v-106.7c0.1-7.2-3.7-13.8-9.8-17.5z" />
+                        </g>
+                    </g>
+                </svg>
+            </a>
 
-    <div class="game-container">
-    <div class="left-panel">
-        <div class="game-timer">3.00</div>
-        
-        <div class="timer-buttons">
-          <button class="button small-btn">Start 3 seconds</button>
-          <button class="button small-btn">Start 10 seconds </button>
-        </div>
-      
-        <div class="name-list">
-          <h3>who is the first to press</h3>
-          <ul>
-            <li>abdullah</li>
-            <li>albara</li>
-            <li>fadi</li>
-            <li>ali</li>
-          </ul>
-        </div>
-        <section>
-          <button id="randomBtn" class="button">Random letters</button>
-          <button class="button" id="aiBtn">Ai</button>
-          <button class="button" id="winBtn">Win</button>
-      </section>
-      </div>
-      <section class="cellBackground">
-        <div class="hex-grid" id="board"></div>
-    </section>
+            <nav>
+                <ul>
 
-    <article id="questionsArticle">
-        <div id="questionContainer" class="inner-container">
-          <p>الأسئلة هي:</p>
-          <!-- Questions will be inserted here by JavaScript -->
-        </div>
-      </article>
-   
-    </div>
+                    <li> <a href="#"> Feedback</a></li>
+                    <li> <a href="#"> game rules</a></li>
+                    <li> <a href="#"> about us</a></li>
 
+                </ul>
+            </nav>
+
+            <div class="actions">
+                <a href="#" class="bttn btn-login">Login</a>
+                <a href="#" class="bttn btn-register">Register</a>
+                <button class="menu-btn">
+                    ☰
+                </button>
+            </div>
+        </nav>
+
+    </header>
     
+    <div class="game-wrapper">
+    <main class="game-container">
+        <section class="quarter">
+            <div class="game-timer">3.00</div>
+            <div class="timer-buttons">
+                <button class="button small-btn start-3-btn">Start 3 seconds</button>
+                <button class="button small-btn start-10-btn">Start 10 seconds</button>
+                <button class="button small-btn reset-btn">Reset</button>
+                <audio id="timerSound" src="../Meadia/preview.mp3" preload="auto"></audio>
+            </div>
+        </section>
+
+        <section class="cellBackground" class="quarter">
+            <div class="hex-grid" id="board"></div>
+        </section>
+
+        <section id="question_con" id="questionsArticle" class="quarter">
+            <div id="questionContainer" class="inner-container">
+                <p>the quesiotn are:</p>
+            </div>
+
+        </section>
+
+        <section  class="quarter ">
+            <button id="randomBtn" class="button">Random letters</button>
+            <button class="button" id="aiBtn">Ai</button>
+            <button class="button" id="winBtn">Win</button>
+        </section>
+
+    </main>
+</div>
+
 
     <article id="popup" class="popup">
-        <div class="inner-container">
+        <section class="inner-container-pop">
 
             <div id="errorMsg" class="error-msg"></div>
             <p>what type of question:</p>
             <div class="threeColumns">
                 <!-- Sports -->
                 <label class="checkbox-wrapper">
-                    <input 
-                        type="checkbox" 
-                        class="checkbox-input" 
-                        data-category="sports"
-                        id="sportsCheckbox"
-                    >
+                    <input type="checkbox" class="checkbox-input" data-category="sports" id="sportsCheckbox">
                     <span class="checkbox-tile">
                         <span class="checkmark"></span>
                     </span>
                     <span class="label-text">🏀 رياضة</span>
                 </label>
-            
+
                 <!-- Religion -->
                 <label class="checkbox-wrapper">
-                    <input 
-                        type="checkbox" 
-                        class="checkbox-input" 
-                        data-category="religion"
-                        id="religionCheckbox"
-                    >
+                    <input type="checkbox" class="checkbox-input" data-category="religion" id="religionCheckbox">
                     <span class="checkbox-tile">
                         <span class="checkmark"></span>
                     </span>
                     <span class="label-text">🕌 دينية</span>
                 </label>
-            
+
                 <!-- Culture -->
                 <label class="checkbox-wrapper">
-                    <input 
-                        type="checkbox" 
-                        class="checkbox-input" 
-                        data-category="culture"
-                        id="cultureCheckbox"
-                    >
+                    <input type="checkbox" class="checkbox-input" data-category="culture" id="cultureCheckbox">
                     <span class="checkbox-tile">
                         <span class="checkmark"></span>
                     </span>
                     <span class="label-text">📚 ثقافة</span>
                 </label>
-            
+
                 <!-- History -->
                 <label class="checkbox-wrapper">
-                    <input 
-                        type="checkbox" 
-                        class="checkbox-input" 
-                        data-category="history"
-                        id="historyCheckbox"
-                    >
+                    <input type="checkbox" class="checkbox-input" data-category="history" id="historyCheckbox">
                     <span class="checkbox-tile">
                         <span class="checkmark"></span>
                     </span>
                     <span class="label-text">🏛️ تاريخ</span>
                 </label>
-            
+
                 <!-- Anime -->
                 <label class="checkbox-wrapper">
-                    <input 
-                        type="checkbox" 
-                        class="checkbox-input" 
-                        data-category="anime"
-                        id="animeCheckbox"
-                    >
+                    <input type="checkbox" class="checkbox-input" data-category="anime" id="animeCheckbox">
                     <span class="checkbox-tile">
                         <span class="checkmark"></span>
                     </span>
                     <span class="label-text">🎌 انمي</span>
                 </label>
-            
+
                 <!-- Movies -->
                 <label class="checkbox-wrapper">
-                    <input 
-                        type="checkbox" 
-                        class="checkbox-input" 
-                        data-category="movies"
-                        id="moviesCheckbox"
-                    >
+                    <input type="checkbox" class="checkbox-input" data-category="movies" id="moviesCheckbox">
                     <span class="checkbox-tile">
                         <span class="checkmark"></span>
                     </span>
@@ -143,41 +148,31 @@
                 </label>
 
                 <label class="checkbox-wrapper">
-                    <input 
-                        type="checkbox" 
-                        class="checkbox-input" 
-                        data-category="charcters"
-                        id="charcters"
-                    >
+                    <input type="checkbox" class="checkbox-input" data-category="charcters" id="charcters">
                     <span class="checkbox-tile">
                         <span class="checkmark"></span>
                     </span>
                     <span class="label-text">🏀 شخصيات</span>
                 </label>
             </div>
-            
+
             <div class="input-wrapper">
-                <input
-                  class="input"
-                  id="letterInput"
-                  name="text"
-                  placeholder="Type a letter..."
-                  type="text"
-                  maxlength="2"
-                />
-                
-              </div>
-              
+                <input class="input" id="letterInput" name="text" placeholder="Type a letter..." type="text"
+                    maxlength="2" />
+
+            </div>
+
             <div class=".twoColumns">
                 <button id="closePopup" class="button" class="buttonPop">Close</button>
                 <button id="send" class="button" class="buttonPop">Send</button>
             </div>
 
-        </div>
+        </section>
     </article>
 
 
     <script src="../js/Cell.js"></script>
+    <script src="../js/timer.js"></script>
 
 
 </body>

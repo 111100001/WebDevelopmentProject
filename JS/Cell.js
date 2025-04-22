@@ -188,14 +188,14 @@ async function getQuestionsFromDeepSeek() {
   const prompt = `
   أنت مساعد ذكي في إعداد أسئلة مسابقات باللغة العربية.
   
-  مطلوب منك توليد 5 أسئلة وأجوبة، بحيث:
+  مطلوب منك توليد 3 أسئلة وأجوبة، بحيث:
   
   1. يكون الحرف المستهدف هو: "${gameState.currentLetter}"
   2. تحتوي **صيغة السؤال** على شيء يبدأ بهذا الحرف (مثلاً: "مدينة تبدأ بحرف م").
   3. ويجب أن تبدأ **الإجابة** أيضًا بنفس الحرف "${gameState.currentLetter}".
   4. تجاهل "ال" التعريف عند الحكم على الحرف (مثال: "المدينة" تعتبر من "م").
   5. يجب أن تكون الإجابة قصيرة، من كلمتين كحد أقصى.
-  6. تتنوع المواضيع بين: مدن، أسماء، معارك، أكلات، نباتات، شخصيات مشهورة.
+  6.  تتنوع المواضيع بين: "${gameState.selectedCategories}.
   7. أرجع الناتج بصيغة JSON بهذا الشكل:
   
   [
@@ -330,3 +330,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   initGame();
 });
+
+
+window.addEventListener('resize', () => {
+  console.log("Window width: ", window.innerWidth);
+});
+
+console.log("Initial width: ", window.innerWidth);

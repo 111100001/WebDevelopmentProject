@@ -1,83 +1,110 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.main-container,
+.game-wrapper {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;  /* optional: prevent horizontal scroll */
+}
+
+
+.game-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
 .inner-container {
-    width: 90%;
-    max-width: 600px;
-    height: 250px;
-    background-color: white;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding-top: 24px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  }
+  width: 500px;
+  min-height: 250px;
+  max-height: 500px;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  justify-self: center;
+  padding-top: 24px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   
-  /* Small devices (phones) */
-  @media (max-width: 576px) {
-    .inner-container {
-      width: 60%;
-      height: 250px;
-      padding-top: 16px;
-    }
-  
-    .centered-text {
-      font-size: 18px;
-    }
-  }
-  
-  /* Medium devices (tablets) */
-  @media (min-width: 577px) and (max-width: 768px) {
-    .inner-container {
-      width: 75%;
-      height: 220px;
-      padding-top: 20px;
-    }
-  
-    .centered-text {
-      font-size: 20px;
-    }
-  }
-  
-  /* Large devices (small laptops) */
-  @media (min-width: 769px) and (max-width: 992px) {
-    .inner-container {
-      width: 80%;
-      height: 250px;
-    }
-  
-    .centered-text {
-      font-size: 22px;
-    }
-  }
-  
-  /* Extra large (desktop and up) */
-  @media (min-width: 993px) {
-    .inner-container {
-      width: 600px;
-      height: 300px;
-    }
-  
-    .centered-text {
-      font-size: 24px;
-    }
-  }
- 
-  
-.twoColumns {
-    display: grid;
-    grid-template-columns: repeat(2, auto); /* 3 columns */
-    justify-content: center;
-    gap: 20px;
-    font-size: small;
-    margin-bottom: 5%;
-}  
-  
+}
+
+.inner-container-pop{
+  width: 90%;
+  max-width: 500px;
+  height: 400px;
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  justify-self: center;
+  padding-top: 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+
+
+.game-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4%;
+  padding: 2rem;
+  max-width: 1200px;
+
+}
+
 .threeColumns {
   display: grid;
-  grid-template-columns: repeat(3, auto); /* 3 columns */
+  grid-template-columns: repeat(3, auto);
+  /* 3 columns */
   justify-content: center;
   gap: 10px;
   font-size: small;
   margin-bottom: 5%;
 }
 
+
+
+
+  .main-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-rows: repeat(2, 1fr);    /* 2 rows */
+    height: 100vh; /* or any size you want */
+    width: 100vw;
+  }
+  
+  .quarter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4F4778;
+    height: 100%;
+    width: 100%;
+    color:black;
+    
+    
+  }
+  
+
+
+  #questionsArticle{
+    color: black;
+    z-index: 1;
+  }
+  

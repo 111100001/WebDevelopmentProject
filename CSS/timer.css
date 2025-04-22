@@ -1,21 +1,7 @@
-/* Main layout structure */
-.game-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    
-    gap: 10px;
-    min-height: 100vh;
 
-  }
+
+
   
-  .left-panel {
-    width: 300px; /* Fixed width for left panel */
-    padding: 20px;
-    background: #f0f0f0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
 
   /* Timer display */
   .game-timer {
@@ -56,7 +42,6 @@
     margin: 8px 0;
     font-size: 1.1rem;
   }
-  
 
-  
+
   
