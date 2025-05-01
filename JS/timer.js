@@ -29,6 +29,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    const winBtn = document.getElementById('winBtn');
+    const winSound = document.getElementById('winSound');
+
+    // Add click event listener to the button
+    winBtn.addEventListener('click', () => {
+    // Play the sound
+    winSound.play()
+        .then(() => {
+        console.log('Win sound played successfully');
+        })
+        .catch(error => {
+        console.error('Error playing sound:', error);
+        });
+    });
+
     // Timer function
     function startTimer(duration) {
         stopTimer();
