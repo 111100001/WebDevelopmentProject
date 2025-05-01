@@ -65,7 +65,7 @@ html, body {
   gap: 4%;
   padding: 2rem;
   max-width: 1200px;
-
+  margin-top: 40px;
 }
 
 .threeColumns {
@@ -100,8 +100,6 @@ html, body {
     
     
   }
-  
-
 
   #questionsArticle{
     color: black;

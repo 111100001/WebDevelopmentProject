@@ -31,6 +31,10 @@ header{
     
 }
 
+nav{
+  position: relative; /* or fixed if you want it sticky */
+  
+}
 
 nav ul{
     
