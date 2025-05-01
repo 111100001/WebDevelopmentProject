@@ -14,45 +14,15 @@
 </head>
 
 <body id="body-container">
-    <header >
-        <nav class="container">
-            <a href="landingPage.html" class="logo">
-                <svg fill="purple" height="50px" width="50px" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink"
-                    enable-background="new 0 0 512 512">
-                    <g>
-                        <g>
-                            <path fill="#1a1a80"
-                                d="m365.5,191.5v-106.7c0-7.2-3.8-13.8-9.9-17.5l-89-53.4c-6.5-3.9-14.5-3.9-21,0l-89.1,53.4c-6.2,3.7-9.9,10.3-9.9,17.5v106.7c0,7.2 3.8,13.8 9.9,17.5l89.1,53.4c9.4,5.4 17.2,2.5 21,0l89-53.4c6.1-3.7 9.9-10.3 9.9-17.5z" />
-                            <path fill="#b3a3d9"
-                                d="m220,303l-89-53.4c-6.5-3.9-14.5-3.9-21,0l-89.1,53.4c-6.2,3.7-9.9,10.3-9.9,17.5v106.7c0,7.2 3.8,13.8 9.9,17.5l89.1,53.4c9.4,5.4 17.2,2.5 21,0l89-53.4c6.2-3.7 9.9-10.3 9.9-17.5v-106.7c0-7.2-3.7-13.8-9.9-17.5z" />
-                            <path fill="#4a4aff"
-                                d="m491.1,302.9l-89-53.4c-6.5-3.9-14.5-3.9-21,0l-89.1,53.4c-6.2,3.7-9.9,10.3-9.9,17.5v106.7c0,7.2 3.8,13.8 9.9,17.5l89,53.4c9.4,5.4 17.2,2.5 21,0l89-53.4c6.2-3.7 9.9-10.3 9.9-17.5v-106.7c0.1-7.2-3.7-13.8-9.8-17.5z" />
-                        </g>
-                    </g>
-                </svg>
-            </a>
+    <div id="navbar-placeholder"></div>
+    <script>
+        fetch('navbar.html')
+          .then(res => res.text())
+          .then(data => {
+            document.getElementById('navbar-placeholder').innerHTML = data;
+          });
+      </script>
 
-            <nav>
-                <ul>
-
-                    <li> <a href="feedbackPage.html"> Feedback</a></li>
-                    <li> <a href="gameRulesPage.html"> game rules</a></li>
-                    <li> <a href="aboutUsPage.html"> about us</a></li>
-                    
-                </ul>
-            </nav>
-
-            <div class="actions">
-                <a href="#" class="bttn btn-login">Login</a>
-                <a href="#" class="bttn btn-register">Register</a>
-                <button class="menu-btn">
-                    ☰
-                </button>
-            </div>
-        </nav>
-
-    </header>
     
     <div class="game-wrapper">
     <main class="game-container">
