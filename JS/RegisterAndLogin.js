@@ -87,7 +87,7 @@ function logout(event){
 document.addEventListener('DOMContentLoaded', () => {
     const loginButton = document.getElementById('login-btn');
     const signupButton = document.getElementById('signup-btn');
-    const logoutbutton = document.getElementById('logoutbtn')
+    const logoutbutton = document.getElementById('logoutbtn');
 
     if (loginButton) {
         loginButton.addEventListener('click', login);

@@ -109,6 +109,15 @@
 </head>
 
 <body>
+  <div id="navbar-placeholder"></div>
+  <script>
+    fetch('navbar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      });
+  </script>
+
   <form>
     <h2>Login</h2>
 
