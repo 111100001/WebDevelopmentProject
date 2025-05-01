@@ -10,7 +10,7 @@
     .inner-container-pop{
         width: 90%;
         height: 50%;
-        background-color: brown;
+        
       }
   
     .checkbox-wrapper {
@@ -71,7 +71,6 @@
     .inner-container-pop{
         width: 60%;
         height: 50%;
-        background-color: rgb(146, 146, 13);
       }
   
   
@@ -197,6 +196,10 @@
         font-weight: bold;
         margin: 20px 0;
         text-align: center;
+      }
+      .game-container {
+     
+        margin-top: 1%;
       }
   }
   
