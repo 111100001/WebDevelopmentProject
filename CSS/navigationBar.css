@@ -31,6 +31,11 @@ header{
     
 }
 
+nav{
+  position: relative; /* or fixed if you want it sticky */
+  margin-top: 20px;
+
+}
 
 nav ul{
     

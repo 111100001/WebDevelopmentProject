@@ -5,6 +5,9 @@
     font-weight: bold;
     margin: 20px 0;
     text-align: center;
+    color: white;
+    background-color: #E67E22;
+    border-radius: 30px ;
   }
   
   .game-timer::after {

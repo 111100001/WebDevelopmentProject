@@ -8,6 +8,7 @@ body {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;  /* optional: prevent horizontal scroll */
+  
 }
 
 
@@ -62,15 +63,25 @@ html, body {
 .game-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 4%;
+  gap: 10%;
   padding: 2rem;
-  max-width: 1200px;
-
+  max-width: 1500px;
+  margin-top: 10%;
 }
 
 .threeColumns {
   display: grid;
   grid-template-columns: repeat(3, auto);
+  /* 2 columns */
+  justify-content: center;
+  gap: 10px;
+  font-size: small;
+  margin-bottom: 5%;
+}
+
+.twoColumns {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
   /* 3 columns */
   justify-content: center;
   gap: 10px;
@@ -100,8 +111,6 @@ html, body {
     
     
   }
-  
-
 
   #questionsArticle{
     color: black;

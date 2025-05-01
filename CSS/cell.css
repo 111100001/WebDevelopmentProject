@@ -6,7 +6,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-
+display: flex;
   
 }
 
@@ -14,7 +14,7 @@ body {
 
 .cellBackground {
               /* Full height */
-  background-color: #616161;
+  
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

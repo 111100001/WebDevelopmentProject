@@ -26,6 +26,7 @@ function login(event){
         })
         .catch(error => {
             console.error('login error:', error.message);
+            document.getElementById('login-error').innerHTML = '<p>Email or Password is invalid</p>';
         });
 }
 //document.getElementById('login-btn').addEventListener('click', login);
@@ -43,7 +44,7 @@ function register(event) {
     const repassword = document.getElementById('repassword').value;
 
     if (password !== repassword) {
-        alert('Passwords do not match. Please try again.');
+        document.getElementById('signup-error').innerHTML = '<p>Passwords do not match. Please try again.</p>';
         return; 
     }
    

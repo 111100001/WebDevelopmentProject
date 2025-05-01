@@ -10,7 +10,7 @@
     .inner-container-pop{
         width: 90%;
         height: 50%;
-        background-color: brown;
+        
       }
   
     .checkbox-wrapper {
@@ -71,7 +71,6 @@
     .inner-container-pop{
         width: 60%;
         height: 50%;
-        background-color: rgb(146, 146, 13);
       }
   
   
@@ -167,8 +166,8 @@
   /* ========== EXTRA LARGE: Desktops (≥993px) ========== */
   @media (min-width: 993px) {
     .hex {
-      width: 100px;
-      height: 90px;
+      width: 80px;
+      height: 70px;
       font-size: 28px;
       
     }
@@ -198,10 +197,14 @@
         margin: 20px 0;
         text-align: center;
       }
+      .game-container {
+     
+        margin-top: 1%;
+      }
   }
   
   
-  @media (max-width: 800px) {
+  @media (max-width: 577px) {
     .game-container {
       grid-template-columns: 1fr;
       padding: 1rem;
