@@ -229,7 +229,7 @@ async function getQuestionsFromDeepSeek() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Bearer sk-30a558372ecf4b8eab6f5ae19abf6aec' // 🔴 Replace with your key
+        'Authorization': 'API key' // 🔴 Replace with your key
       },
       body: JSON.stringify({
         model: "deepseek-chat",
