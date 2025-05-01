@@ -16,43 +16,6 @@
       font-size: 20px;
     }
 
-    /* Navbar */
-    .navbar {
-      background-color: #d8d6e5;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      padding: 10px 20px;
-    }
-
-    .navbar-left img {
-      width: 25px;
-      height: auto;
-    }
-
-    .navbar-right {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 10px;
-    }
-
-    .navbar-right button {
-      background-color: #4f4778;
-      color: white;
-      border: none;
-      padding: 6px 12px;
-      border-radius: 5px;
-      font-family: 'Fredoka', sans-serif;
-      cursor: pointer;
-      font-size: 14px;
-    }
-
-    .navbar-right button:hover {
-      background-color: #6a63a3;
-    }
-
     /* Content */
     .content {
       max-width: 600px;
@@ -149,52 +112,32 @@
 
     /* Small devices (phones, 576px and down) */
     @media (max-width: 576px) {
-      .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+  
 
-      .navbar-right {
-        justify-content: flex-start;
-      }
+  .content {
+    margin: 60px 10px;
+    font-size: 16px;
+  }
 
-      .content {
-        margin: 60px 10px;
-        font-size: 16px;
-      }
 
-      .navbar-right button {
-        font-size: 12px;
-        padding: 5px 10px;
-      }
+  .content h3 {
+    font-size: 24px;
+  }
+}
 
-      .content h3 {
-        font-size: 24px;
-      }
-    }
+/* Medium devices (tablets, 768px and down) */
+@media (max-width: 768px) {
+  .content {
+    font-size: 18px;
+  }
 
-    /* Medium devices (tablets, 768px and down) */
-    @media (max-width: 768px) {
-      .content {
-        font-size: 18px;
-      }
+}
 
-      .navbar-right {
-        justify-content: center;
-      }
-    }
+/* Large devices (992px and down) */
+@media (max-width: 992px) {
 
-    /* Large devices (992px and down) */
-    @media (max-width: 992px) {
-      .navbar {
-        padding: 10px;
-      }
 
-      .navbar-right button {
-        padding: 6px 10px;
-      }
-
-    }
+}
   </style>
 </head>
 <body>
@@ -215,7 +158,7 @@
     <form class="feedback-form">
     <textarea rows="10" cols="50" placeholder="Enter your feedback here"></textarea>
     <br>  
-    <button class="submitBTN">Submet</button>
+    <button class="submitBTN">Submit</button>
     </form>
   </div>
 
