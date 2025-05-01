@@ -95,6 +95,11 @@
     width: 100%;
     z-index: 1000;
     }
+
+    #signup-error{
+      color: red;
+    }
+    
   </style>
 </head>
 
@@ -110,6 +115,7 @@
 
   <form>
     <h2>Sign Up</h2>
+    <div id="signup-error"></div>
 
     <label>Email:</label>
     <input type="text" id="email" placeholder="Enter Email" required>

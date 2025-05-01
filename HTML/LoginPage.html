@@ -114,6 +114,10 @@
     width: 100%;
     z-index: 1000;
     }
+
+    #login-error{
+      color: red;
+    }
   </style>
   
 </head>
@@ -130,6 +134,7 @@
 
   <form>
     <h2>Login</h2>
+    <div id="login-error"></div>
 
     <label>Email:</label>
     <input type="text" id="email" placeholder="Enter Email">
