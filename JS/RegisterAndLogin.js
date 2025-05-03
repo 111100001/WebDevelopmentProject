@@ -1,9 +1,8 @@
-import { auth } from './firebase-init.js' ;
+import { auth, onAuthStateChanged } from './firebase-init.js' ;
 
 import { createUserWithEmailAndPassword,
         signInWithEmailAndPassword,
-        signOut
-} from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+        signOut } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
 
 
 
@@ -90,6 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const signupButton = document.getElementById('signup-btn');
     const logoutbutton = document.getElementById('logoutbtn');
 
+    
     if (loginButton) {
         loginButton.addEventListener('click', login);
     }
@@ -102,6 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
     }
 });
+export{logout}
     
 
 

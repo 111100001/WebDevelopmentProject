@@ -33,7 +33,7 @@ header{
 
 nav{
   position: relative; /* or fixed if you want it sticky */
-  margin-top: 20px;
+  margin-top: 5px;
 
 }
 
@@ -64,7 +64,6 @@ nav a {
 }
 
 nav a:hover{
-
     opacity: 0.75;
 }
 
@@ -79,37 +78,34 @@ nav a:hover{
     font-size: 14px;
     text-decoration: none;
     display: inline-block;
+    transition: opacity 0.3s ease;
+}
+.bttn:hover{
+  opacity:0.75 ;
 }
 
 .btn-login{
-background-color: var(--main-color);
-color: white;
-}
-
-.btn-login:hover{
-    opacity: 0.75;
-
+    background-color: var(--main-color);
+    color: white;
+    border: none;
 }
 
 .btn-register{
     background-color: #eee;
     color: var(--main-color);
+    border: none;
 }
 
 .btn-register:hover{
-    opacity: 0.75;
+    background-color: var(--main-color);
+    color: #fff;
 }
+
 
 /* ✅ Extra Small Devices (≤576px) */
 @media (max-width: 576px) {
     nav ul,
-    .actions a:not(.menu-btn) {
-      display: none;
-    }
-  
-    .menu-btn {
-      display: inline-block;
-    }
+    
   
     .container {
       flex-direction: row;
@@ -125,13 +121,7 @@ color: white;
   /* ✅ Small Devices (577px–768px) */
   @media (min-width: 577px) and (max-width: 768px) {
     nav ul,
-    .actions a:not(.menu-btn) {
-      display: none;
-    }
-  
-    .menu-btn {
-      display: inline-block;
-    }
+   
   
     .container {
       flex-direction: row;
@@ -158,7 +148,4 @@ color: white;
       width: 46px;
       height: 46px;
     }
-  
-    .menu-btn {
-      display: none;
-    }}
+  }

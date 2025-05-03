@@ -1,6 +1,68 @@
 <header>
-    <link rel="stylesheet" href="/CSS/navigationBar.css">
+    <script type="module">
+//         import { auth, onAuthStateChanged } from '../JS/firebase-init.js';
+       
+//        document.addEventListener('DOMContentLoaded', () => {
+           
+//        // const playButton = document.getElementById('play-btn');
+//        // const createRoomButton = document.getElementById('create-room-btn');
+//        // const joinRoomButton = document.getElementById('join-room-btn');
+//        const loginbutton = document.getElementById('loginbtn');
+//        const signupbutton = document.getElementById('signupbtn');
+//        const logoutbutton = document.getElementById('logoutbtn');
+   
+//        // Check the user's authentication status
+//        onAuthStateChanged(auth, (user) => {
+//            // console.log("playButton:", playButton);
+//            // console.log("createRoomButton:", createRoomButton);
+//            // console.log("joinRoomButton:", joinRoomButton);
+//            if (user) {
+//                // User is logged in, show the buttons
+//                // playButton.style.display = 'block';
+//                // createRoomButton.style.display = 'block';
+//                // joinRoomButton.style.display = 'block';
+//                loginbutton.style.display = 'none';
+//                signupbutton.style.display = 'none';
+//                logoutbutton.style.display = 'block';
+   
+//            } else {
+//                console.log("not logged in");
+//                // User is not logged in, hide the buttons
+//                // playButton.style.display = 'none';
+//                // createRoomButton.style.display = 'none';
+//                // joinRoomButton.style.display = 'none';
+//                logoutbutton.style.display = 'none';
+//                logoutbutton.innerText = 'ge'
+//            }
+//        });
+//    });
+        import { logout } from '../JS/RegisterAndLogin.js'
 
+        import { auth } from '../JS/firebase-init.js';
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+        
+        const loginbutton = document.getElementById('loginbtn');
+        const signupbutton = document.getElementById('signupbtn');
+        const logoutbutton = document.getElementById('logoutbtn');
+        
+
+        onAuthStateChanged(auth, (user) => {
+        console.log("user is" + user)
+            if (user) {
+                loginbutton.style.display = 'none';
+                signupbutton.style.display = 'none';
+                logoutbutton.style.display = 'block';
+                logoutbutton.addEventListener('click', logout);
+
+            } else {
+                loginbutton.style.display = 'inline-block';
+                signupbutton.style.display = 'inline-block';
+                logoutbutton.style.display = 'none';
+            }
+        });
+    </script>
+
+    <link rel="stylesheet" href="/CSS/navigationBar.css">
     <div class="container">
         <a href="./landingPage.html" class="logo">
             <svg fill="purple" height="50px" width="50px" version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 512 512">
@@ -18,17 +80,17 @@
             <ul>
                 
                 <li> <a href="feedbackPage.html"> Feedback</a></li>
-                <li> <a href="gameRulesPage.html"> game rules</a></li>
-                <li> <a href="aboutUsPage.html"> about us</a></li>
+                <li> <a href="gameRulesPage.html">game rules</a></li>
+                <li> <a href="aboutUsPage.html">about us</a></li>
                 
             </ul>
         </nav>
         
     <div class="actions">
-        <a id="loginbtn" href="./LogInPage.html" class="bttn btn-login">Login</a>
+        <a id="loginbtn" href="./LogInPage.html" class="bttn btn-login">Log in</a>
         <a id="signupbtn" href="./SignUpPage.html" class="bttn btn-register">Register</a>
         <a id="logoutbtn" href="#" class="bttn btn-register">log out</a>
-        
     </div>
 </div>
 </header>
+<script type="module" src="../JS/RegisterAndLogin.js"></script>
