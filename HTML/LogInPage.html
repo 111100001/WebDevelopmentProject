@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  
+  <script type="module" src="/JS/firebase-init.js"></script>
+  <script type="module" src="/JS/RegisterAndLogin.js"></script>
+
+  <style>
+    body {
+      background-color: #4F4778;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      width: 300px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #4f4778;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .login-btn-container {
+      margin-top: 20px;
+    }
+
+    .login-btn  {
+      --color: #4f4778;
+      font-family: inherit;
+      display: inline-block;
+      width: 6em;
+      height: 2.6em;
+      line-height: 2.5em;
+      overflow: hidden;
+      cursor: pointer;
+      font-size: 17px;
+      z-index: 1;
+      color: var(--color);
+      border: 2px solid var(--color);
+      border-radius: 6px;
+      position: relative;
+      background: none;
+    }
+
+    .login-btn::before {
+      position: absolute;
+      content: "";
+      background: var(--color);
+      width: 150px;
+      height: 200px;
+      z-index: -1;
+      border-radius: 50%;
+      top: 100%;
+      left: 100%;
+      transition: 0.3s all;
+    }
+
+    .login-btn:hover {
+      color: white;
+    }
+
+    .login-btn:hover::before {
+      top: -30px;
+      left: -30px;
+    }
+
+    
+    .signup-link {
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .signup-link a {
+      color: #4F4778;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+
+    #navbar-placeholder {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    }
+
+    #login-error{
+      color: red;
+    }
+  </style>
+  
+</head>
+<body>
+  <div id="navbar-placeholder"></div>
+ 
+
+  <form>
+    <h2>Login</h2>
+    <div id="login-error"></div>
+
+    <label>Email:</label>
+    <input type="text" id="email" placeholder="Enter Email">
+
+    <label>Password:</label>
+    <input type="password" id="password" placeholder="Enter Password">
+
+    <button  id="login-btn" class="login-btn" type="submit">Login</button>
+
+    <div class="signup-link">
+        Don't have an account? <a href="SignUpPage.html">Sign up</a>
+      </div>
+  </form>
+</body>
+
+<script type="module">
+    import { logout } from '../JS/RegisterAndLogin.js'
+
+    import { auth } from '../JS/firebase-init.js';
+    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+    fetch('navbar.html')
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+              const loginbutton = document.getElementById('loginbtn');
+              const signupbutton = document.getElementById('signupbtn');
+              const logoutbutton = document.getElementById('logoutbtn');
+              
+  
+              onAuthStateChanged(auth, (user) => {
+                console.log("user is" + user)
+                  if (user) {
+                      loginbutton.style.display = 'none';
+                      signupbutton.style.display = 'none';
+                      logoutbutton.style.display = 'block';
+                      logoutbutton.addEventListener('click', logout);
+
+                  } else {
+                      loginbutton.style.display = 'inline-block';
+                      signupbutton.style.display = 'inline-block';
+                      logoutbutton.style.display = 'none';
+                  }
+              });
+          });
+</script>
+</html>
