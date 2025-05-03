@@ -150,12 +150,33 @@
 <body>
 
   <div id="navbar-placeholder"></div>
-  <script>
+  <script type="module">
+    import { logout } from '../JS/RegisterAndLogin.js'
+    import { auth } from '../JS/firebase-init.js';
+    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
     fetch('navbar.html')
       .then(res => res.text())
       .then(data => {
         document.getElementById('navbar-placeholder').innerHTML = data;
-      });
+              const loginbutton = document.getElementById('loginbtn');
+              const signupbutton = document.getElementById('signupbtn');
+              const logoutbutton = document.getElementById('logoutbtn');
+              
+  
+              onAuthStateChanged(auth, (user) => {
+                console.log("user is" + user)
+                  if (user) {
+                      loginbutton.style.display = 'none';
+                      signupbutton.style.display = 'none';
+                      logoutbutton.style.display = 'block';
+                      logoutbutton.addEventListener('click', logout);
+                  } else {
+                      loginbutton.style.display = 'inline-block';
+                      signupbutton.style.display = 'inline-block';
+                      logoutbutton.style.display = 'none';
+                  }
+              });
+          });
   </script>
 
   <!-- Content -->
