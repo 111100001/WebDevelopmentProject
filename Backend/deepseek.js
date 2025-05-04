@@ -1,14 +1,14 @@
-// Get references
+//get references
 const input = document.getElementById("letterInput");
 const error = document.getElementById("errorMsg");
 const sendBtn = document.getElementById("send");
 const checkboxes = document.querySelectorAll('.checkbox-input');
 
-// Validate letter input
+//validate letter input
 input.addEventListener("input", () => {
   const value = input.value;
   const letterOnly = value.replace(/[^a-zA-Zأ-ي]/g, "");
-  input.value = letterOnly.charAt(0); // force only one letter
+  input.value = letterOnly.charAt(0); //force only one letter
 
   if (letterOnly.length > 1) {
     showError("🚫 Only one letter!");
@@ -17,7 +17,7 @@ input.addEventListener("input", () => {
   }
 });
 
-// Validate and send
+//validate and send
 sendBtn.addEventListener('click', async () => {
   if (!validateForm()) return;
 
@@ -26,17 +26,17 @@ sendBtn.addEventListener('click', async () => {
     .map(checkbox => checkbox.dataset.category);
 
   try {
-    // Show loading state
+    //show loading state
     sendBtn.disabled = true;
     sendBtn.textContent = 'جاري الإرسال...';
 
-    // Fetch questions from DeepSeek API
+    //fetch questions from DeepSeek API
     const questions = await getQuestionsFromDeepSeek(selectedLetter, selectedCategories);
 
-    // Display the questions
+    //display the questions
     displayQuestions(questions);
 
-    // Reset UI
+    //reset UI
     document.getElementById('popup').classList.remove('show');
     input.value = '';
     checkboxes.forEach(cb => cb.checked = false);
@@ -111,7 +111,7 @@ async function getQuestionsFromDeepSeek(letter, categories) {
   });
 
   const data = await response.json();
-  return processApiResponse(data); // Implement this function or return mock data
+  return processApiResponse(data); //implement this function or return mock data
 }
 
 // ✅ Error message animation
@@ -119,6 +119,6 @@ function showError(message) {
   error.textContent = message;
   error.style.display = "block";
   error.classList.remove("shake");
-  void error.offsetWidth; // force reflow for animation restart
+  void error.offsetWidth; //force reflow for animation restart
   error.classList.add("shake");
 }

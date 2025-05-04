@@ -70,11 +70,11 @@ function logout(event){
             const signupButton = document.getElementById('signupbtn');
 
             if (loginButton) {
-                loginButton.style.display = 'inline-block'; // Show the login button
+                loginButton.style.display = 'inline-block'; //show the login button
             }
 
             if (signupButton) {
-                signupButton.style.display = 'inline-block'; // Show the signup button
+                signupButton.style.display = 'inline-block'; //show the signup button
             }
             
         })

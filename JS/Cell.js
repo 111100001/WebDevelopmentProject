@@ -1,4 +1,4 @@
-// Arabic letters array
+//arabic letters array
 const arabicLetters = [
   'أ', 'ب', 'ت', 'ث', 'ج', 'ح', 'خ',
   'د', 'ذ', 'ر', 'ز', 'س', 'ش', 'ص',
@@ -6,7 +6,7 @@ const arabicLetters = [
   'ك', 'ل', 'م', 'ن', 'ه', 'و', 'ي'
 ];
 
-// Game state
+//game state
 const gameState = {
   teamOneColor: "rgb(0, 151, 18)",
   teamTwoColor: "rgb(255, 130, 0)",
@@ -15,7 +15,7 @@ const gameState = {
   usedLetters: []
 };
 
-// DOM Elements
+//dOM Elements
 const elements = {
   board: document.getElementById('board'),
   randomBtn: document.getElementById('randomBtn'),
@@ -32,13 +32,13 @@ const elements = {
 
 };
 
-// Initialize the game
+//initialize the game
 function initGame() {
   createBoard();
   setupEventListeners();
 }
 
-// Create the game board
+//create the game board
 function createBoard() {
   elements.board.innerHTML = '';
   
@@ -57,7 +57,7 @@ function createBoard() {
   updateBoard();
 }
 
-// Update board with random letters
+//update board with random letters
 function updateBoard() {
   const availableLetters = arabicLetters.filter(letter => !gameState.usedLetters.includes(letter));
   const letters = [...availableLetters]
@@ -71,7 +71,7 @@ function updateBoard() {
   });
 }
 
-// Handle hexagon clicks
+//handle hexagon clicks
 function handleHexClick(e) {
   const states = ['white', gameState.teamOneColor, gameState.teamTwoColor];
   const currentState = parseInt(e.target.dataset.state);
@@ -81,16 +81,16 @@ function handleHexClick(e) {
   e.target.style.backgroundColor = states[nextState];
 }
 
-// Setup all event listeners
+//setup all event listeners
 function setupEventListeners() {
-  // Randomize button
+  //randomize button
   elements.randomBtn.addEventListener('click', updateBoard);
   
-  // AI Popup
+  //aI Popup
   elements.aiBtn.addEventListener('click', () => elements.popup.classList.add('show'));
   elements.closePopup.addEventListener('click', () => elements.popup.classList.remove('show'));
   
-  // Letter input validation
+  //letter input validation
   elements.letterInput.addEventListener('input', (e) => {
     const value = e.target.value;
     const arabicLetter = value.replace(/[^أ-ي]/g, "");
@@ -99,14 +99,14 @@ function setupEventListeners() {
     else elements.errorMsg.style.display = 'none';
   });
   
-  // Send button (form submission)
+  //send button (form submission)
   elements.sendBtn.addEventListener('click', handleFormSubmission);
   
-  // Fireworks
+  //fireworks
   setupFireworks();
 }
 
-// Handle form submission
+//handle form submission
 async function handleFormSubmission() {
 
   if (!elements.questionContainer) {
@@ -127,7 +127,7 @@ async function handleFormSubmission() {
     displayQuestions(questions);
     resetForm();
     
-    // Mark letter as used
+    //mark letter as used
     gameState.usedLetters.push(gameState.currentLetter);
     updateBoard();
   } catch (error) {
@@ -137,14 +137,14 @@ async function handleFormSubmission() {
   }
 }
 
-// Validate form inputs
+//validate form inputs
 function validateForm() {
   if (!elements.letterInput.value) {
     showError("🚫 الرجاء إدخال حرف");
     return false;
   }
   
-  // if (gameState.usedLetters.includes(elements.letterInput.value)) {
+  //if (gameState.usedLetters.includes(elements.letterInput.value)) {
   //   showError("🚫 هذا الحرف مستخدم بالفعل");
   //   return false;
   // }
@@ -157,8 +157,8 @@ function validateForm() {
   return true;
 }
 
-// Display questions in container
-// Modified display function to show Q&A
+//display questions in container
+//modified display function to show Q&A
 function displayQuestions(questions) {
   if (!elements.questionContainer) {
     console.error("Question container element not found!");
@@ -183,7 +183,7 @@ function displayQuestions(questions) {
   elements.questionContainer.innerHTML = html;
 }
 
-// Get questions from DeepSeek API
+//get questions from DeepSeek API
 async function getQuestionsFromDeepSeek() {
   const prompt = `
  أنت مساعد ذكي لإنشاء أسئلة مسابقات تعليمية باللغة العربية.
@@ -242,11 +242,11 @@ async function getQuestionsFromDeepSeek() {
     
     const data = await response.json();
     const content = JSON.parse(data.choices[0].message.content);
-    return content.questions || content; // Handle different response formats
+    return content.questions || content; //handle different response formats
 
   } catch (error) {
     console.error("API Error:", error);
-    // Fallback data
+    //fallback data
     return [
       {
         question: `ما أشهر نبات يبدأ بحرف ${gameState.currentLetter}؟`,
@@ -256,7 +256,7 @@ async function getQuestionsFromDeepSeek() {
   }
 }
 
-// Modified display function to show Q&A
+//modified display function to show Q&A
 function displayQuestions(qnaPairs) {
   elements.questionContainer.innerHTML = '<h3>الأسئلة والأجوبة:</h3>';
   
@@ -274,7 +274,7 @@ function displayQuestions(qnaPairs) {
   elements.questionContainer.appendChild(list);
 }
 
-// Fireworks setup
+//fireworks setup
 function setupFireworks() {
   if (typeof Fireworks === 'function' && elements.fireworksContainer) {
     const fireworks = new Fireworks({
@@ -293,12 +293,12 @@ function setupFireworks() {
   }
 }
 
-// Helper functions
+//helper functions
 function showError(msg) {
   elements.errorMsg.textContent = msg;
   elements.errorMsg.style.display = 'block';
   
-  // Shake animation
+  //shake animation
   elements.errorMsg.classList.remove('shake');
   void elements.errorMsg.offsetWidth;
   elements.errorMsg.classList.add('shake');
@@ -317,12 +317,12 @@ function resetForm() {
   elements.errorMsg.style.display = 'none';
 }
 
-// Initialize the game when DOM is loaded
+
 document.addEventListener('DOMContentLoaded', initGame);
 
-// At the bottom of your JS:
+
 document.addEventListener('DOMContentLoaded', () => {
-  // Verify element exists
+  
   if (!document.getElementById('questionContainer')) {
     console.error("Critical: Question container missing from DOM");
     return;

@@ -70,6 +70,7 @@ nav a:hover{
 .actions{
     display: flex;
     gap: 8px;
+    
 }
 
 .bttn{
@@ -79,6 +80,7 @@ nav a:hover{
     text-decoration: none;
     display: inline-block;
     transition: opacity 0.3s ease;
+    display: none;
 }
 .bttn:hover{
   opacity:0.75 ;

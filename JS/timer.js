@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Get DOM elements
+    //get DOM elements
     const timerDisplay = document.querySelector('.game-timer');
     const start3SecBtn = document.querySelector('.start-3-btn');
     const start10SecBtn = document.querySelector('.start-10-btn');
@@ -10,21 +10,21 @@ document.addEventListener('DOMContentLoaded', function() {
     let isRunning = false;
     const DEFAULT_TIME = 3.00;
 
-    // Format time as XX.XX
+    //format time as XX.XX
     function formatTime(seconds) {
         return seconds.toFixed(2).padStart(5, '0');
     }
 
-    // Stop any running timer
+    //stop any running timer
     function stopTimer() {
         clearInterval(countdown);
         isRunning = false;
     }
 
-    // Play completion sound
+    //play completion sound
     function playCompletionSound() {
         if (timerSound) {
-            timerSound.currentTime = 0; // Rewind to start
+            timerSound.currentTime = 0; //rewind to start
             timerSound.play().catch(e => console.log("Audio play failed:", e));
         }
     }
@@ -32,9 +32,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const winBtn = document.getElementById('winBtn');
     const winSound = document.getElementById('winSound');
 
-    // Add click event listener to the button
+    //add click event listener to the button
     winBtn.addEventListener('click', () => {
-    // Play the sound
+    //play the sound
     winSound.play()
         .then(() => {
         console.log('Win sound played successfully');
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Timer function
+    //timer function
     function startTimer(duration) {
         stopTimer();
         isRunning = true;
@@ -64,13 +64,13 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 10);
     }
 
-    // Reset to default time (3.00)
+    //reset to default time (3.00)
     function resetTimer() {
         stopTimer();
         timerDisplay.textContent = formatTime(DEFAULT_TIME);
     }
 
-    // Button event listeners
+    //button event listeners
     start3SecBtn.addEventListener('click', function() {
         startTimer(3.00);
     });
@@ -81,6 +81,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     resetBtn.addEventListener('click', resetTimer);
 
-    // Initialize with default time
+    //initialize with default time
     resetTimer();
 });
