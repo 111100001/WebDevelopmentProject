@@ -19,6 +19,7 @@
 <body id="body-container">
     <div id="navbar-placeholder"></div>
     <script type="module">
+        import { logout } from '../JS/RegisterAndLogin.js'
         import { auth } from '../JS/firebase-init.js';
         import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
         fetch('navbar.html')
@@ -36,10 +37,13 @@
                           loginbutton.style.display = 'none';
                           signupbutton.style.display = 'none';
                           logoutbutton.style.display = 'block';
+                          logoutbutton.addEventListener('click', logout);
+
                       } else {
                           loginbutton.style.display = 'inline-block';
                           signupbutton.style.display = 'inline-block';
                           logoutbutton.style.display = 'none';
+                          window.location.href = 'landingPage.html';
                       }
                   });
               });
